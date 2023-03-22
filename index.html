@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grading System</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <style>
+            .back {
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400%;
+                animation: gradient 10s ease infinite;
+                height: 100vh;
+                }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+        </style>
+    </head>
+    <body> 
+        <div class="back">
+            <div class="justify-center flex font-bold text-4xl text-white">Grading System</div>
+            <div class="flex justify-center items-center h-96 px-4 ">
+                <div class="relative flex flex-col rounded-[20px] max-w-[500px] bg-whit w-full !p-6 border border-indigo-600 shadow-lg" style="box-shadow:3px 3px 5px ;">
+                    <marquee behavior="" direction="" class="text-3xl text-white font-bold">welcome please enter your score</marquee>
+                    <input type="text" id="userscore" placeholder="Enter your score"> 
+    
+                    <div class="h-full w-full mt-9 flex flex-col">
+                        <button onclick="checkscore()" class="rounded-xl bg-gradient-to-br from-[#6025F5] to-[#FF5555] px-5 py-3 text-white hover:shadow-lg hover:shadow-[#6025F5]/50 font-bold text-2xl">
+                        Check
+                        </button>
+                    </div>
+                    <div id="showscore" class="text-center text-2xl  font-bold my-4"></div>
+                </div>
+            </div>
+        </div> 
+
+
+
+        <script>
+            function checkscore() {
+                var song = new Audio("sung.mp3")
+                var score = document.getElementById("userscore")
+                var userscore = score.value
+                var song = new Audio ("shame-45.mp3")
+                var song1 = new Audio ("crowd-cheer.mp3")
+
+                
+                if (userscore >=89 && userscore <= 100) {
+                    var resuit = "A1"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "green";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=80 && userscore <= 89) {
+                    var resuit = "B2"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "green";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=75 && userscore <= 80) {
+                    var resuit = "B3"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "green";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=70 && userscore <= 75) {
+                    var resuit = "C4"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "gold";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=60 && userscore <= 70) {
+                    var resuit = "C5"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "gold";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=50 && userscore <= 60) {
+                    var resuit = "C6"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "gold";
+                    song1.play();
+                    score.value = "";
+                } else if (userscore >=45 && userscore <= 49) {
+                    var resuit = "D7"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "red";
+                    song.play();
+                    score.value = "";
+                } else if (userscore >=39 && userscore <= 45) {
+                    var resuit = "E8"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "red";
+                    song.play();
+                    score.value = "";
+                } else if (!score.value) {
+                    var resuit = "Input Score"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "blue";
+                    // song.play();
+                    score.value = "";
+                } else if (score.value < 0 || userscore > 100) {
+                    var resuit = "Invaild Score"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "red";
+                    // song.play();
+                    score.value = "";
+                } else if (userscore >=0 && userscore <= 39) {
+                    var resuit = "F9"
+                    showscore.innerHTML = resuit
+                    showscore.style.color = "red";
+                    song.play();
+                    score.value = "";
+                }
+            }
+        </script>
+    </body>
+</html>
